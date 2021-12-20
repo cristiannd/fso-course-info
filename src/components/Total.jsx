@@ -1,10 +1,10 @@
 const Total = ({ parts }) => {
-  return (
-    <p>
-      Number of exercises{' '}
-      {parts[0].exercises + parts[1].exercises + parts[2].exercises}
-    </p>
+  const total = parts.reduce(
+    (previo, siguiente) => previo + siguiente.exercises,
+    0
   )
+
+  return <strong>Total of {total} exercises</strong>
 }
 
 export default Total
