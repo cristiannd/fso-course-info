@@ -1,14 +1,20 @@
-import Content from "./components/Content"
-import Header from "./components/Header"
-import Total from "./components/Total"
+import Content from './components/Content'
+import Header from './components/Header'
+import Total from './components/Total'
 
-const App = ({course}) => {
+const App = ({ course }) => {
   return (
-    <div>
-      <Header name={course.name} />
-      <Content parts={course.parts} />
-      <Total parts={course.parts} />
-    </div>
+    <>
+      {course.map((e) => {
+        return (
+          <div key={e.id}>
+            <Header name={e.name} />
+            <Content parts={e.parts} />
+            <Total parts={e.parts} />
+          </div>
+        )
+      })}
+    </>
   )
 }
 
